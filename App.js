@@ -16,7 +16,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
 
 export default function App() {
   return (
@@ -30,7 +30,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FF99CC',
     alignItems: 'center',
     justifyContent: 'center',
   },
