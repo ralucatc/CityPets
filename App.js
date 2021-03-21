@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import * as firebase from "firebase"
+import WelcomeScreen from './app/assets/screens/WelcomeScreen';
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBVwrcl0YFwbSzW8CIcW1_amI6vtzu6Rus",
@@ -19,19 +20,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>This is going to be the first page of our app.</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <WelcomeScreen />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FF99CC',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
