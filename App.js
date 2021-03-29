@@ -34,9 +34,9 @@ function MyStack() {
         },
       }}>   
     <Stack.Screen 
-        name="Initial page" 
+        name="Welcome Page" 
         component={WelcomeScreen} 
-        options={{ title: 'Welcome Screen' }}
+       
       />  
       <Stack.Screen 
         name="Signup" 
