@@ -7,14 +7,15 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App(){
+/*export default function App(){
   return(
      <WelcomeScreen/>
   );
 }
+*/
 
 
-/*const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
 function MyStack() {
   return (
@@ -29,7 +30,7 @@ function MyStack() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-      }}>
+      }}>   
       <Stack.Screen 
         name="Signup" 
         component={Signup} 
@@ -61,5 +62,5 @@ export default function App() {
       <MyStack />
     </NavigationContainer>
   );
-}*/
+}
 
