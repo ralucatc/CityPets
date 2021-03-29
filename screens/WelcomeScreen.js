@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     background: {
         flex: 1,
         justifyContent: "flex-end",
-        height: 750,
+        height: 700,
     },
 
     buttonsContainer: {

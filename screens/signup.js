@@ -84,14 +84,13 @@ export default class Signup extends Component {
         />   
         <Button
           color="#3740FE"
-          title="Signup"
+          title="Sign up"
           onPress={() => this.registerUser()}
         />
-
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Login')}>
-          Already Registered? Click here to login
+          Already registered? Click here to login!
         </Text>                          
       </View>
     );

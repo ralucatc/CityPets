@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator
-      initialRouteName="WelcomeScreen"
+      initialRouteName="Welcome Screen"
       screenOptions={{
         headerTitleAlign: 'center',
         headerStyle: {
@@ -36,12 +36,12 @@ function MyStack() {
     <Stack.Screen 
         name="Initial page" 
         component={WelcomeScreen} 
-        options={{ title: 'WelcomeScreen' }}
+        options={{ title: 'Welcome Screen' }}
       />  
       <Stack.Screen 
         name="Signup" 
         component={Signup} 
-        options={{ title: 'Signup' }}
+        options={{ title: 'Sign up' }}
       />       
       <Stack.Screen 
         name="Login" 

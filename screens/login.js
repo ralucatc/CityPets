@@ -75,14 +75,14 @@ export default class Login extends Component {
         />   
         <Button
           color="#3740FE"
-          title="Signin"
+          title="Sign in"
           onPress={() => this.userLogin()}
         />   
 
         <Text 
           style={styles.loginText}
-          onPress={() => this.props.navigation.navigate('Signup')}>
-          Don't have account? Click here to signup
+          onPress={() => this.props.navigation.navigate('Sign up')}>
+          Don't have an account? Click here to sign-up!
         </Text>   
                            
       
@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
     maxWidth:350, 
     marginBottom: 100,
     marginTop: -150
-    
   },
   container: {
     flex: 1,
