@@ -9,9 +9,10 @@ function WelcomeScreen(props) {
        style={styles.background}
        source={require("../assets/background.png")}>
            <View style={styles.buttonsContainer}>
-           <AppButton title="Login" 
+           <AppButton title="Login"  onPress = {() => props.navigation.navigate('Login')}
            />
-           <AppButton title="Register" color = "secondary" 
+           
+           <AppButton title="Register" onPress = {() => props.navigation.navigate('Signup')} color = "secondary" 
            />
            </View>
        </ImageBackground>

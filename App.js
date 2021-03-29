@@ -47,8 +47,8 @@ function MyStack() {
         name="Login" 
         component={Login} 
         options={
-          {title: 'Login'},
-          {headerLeft: null} 
+          {title: 'Login'}
+         // {headerLeft: null} 
         }
       />
       <Stack.Screen 
