@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicato, ImageBackground } from 'react-native';
 import firebase from '../database/firebase';
 
 
@@ -58,6 +58,10 @@ export default class Signup extends Component {
     }    
     return (
       <View style={styles.container}>  
+      <ImageBackground 
+      style={styles.backgroundImage}
+      source={require("../assets/register.jpg")}>
+     </ImageBackground> 
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
@@ -95,6 +99,14 @@ export default class Signup extends Component {
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    justifyContent: "flex-start",
+    maxHeight: 250,
+    maxWidth:350, 
+    marginBottom: 100,
+    marginTop: -150
+  },
   container: {
     flex: 1,
     display: "flex",
