@@ -9,8 +9,10 @@ function WelcomeScreen(props) {
        style={styles.background}
        source={require("../assets/background.png")}>
            <View style={styles.buttonsContainer}>
-           <AppButton title="Login" />
-           <AppButton title="Register" color = "secondary" />
+           <AppButton title="Login" 
+           />
+           <AppButton title="Register" color = "secondary" 
+           />
            </View>
        </ImageBackground>
     );
@@ -20,6 +22,7 @@ const styles = StyleSheet.create({
     background: {
         flex: 1,
         justifyContent: "flex-end",
+        height: 750,
     },
 
     buttonsContainer: {

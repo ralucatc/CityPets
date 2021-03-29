@@ -1,4 +1,4 @@
 export default{
-    primary: "#57419d",
-    secondary: "#ffb61d",
+    primary: "#57419d", // mov
+    secondary: "#ffb61d", //galben
 }
