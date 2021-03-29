@@ -1,23 +1,66 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import * as firebase from "firebase";
+import Login from './screens/login';
+import Signup from './screens/signup';
+import Dashboard from './screens/dashboard';
 import WelcomeScreen from './screens/WelcomeScreen';
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyBVwrcl0YFwbSzW8CIcW1_amI6vtzu6Rus",
-  authDomain: "pets-friendly-cities.firebaseapp.com",
-  databaseURL: "https://pets-friendly-cities-default-rtdb.firebaseio.com",
-  projectId: "pets-friendly-cities",
-  storageBucket: "pets-friendly-cities.appspot.com",
-  messagingSenderId: "871709221126",
-  appId: "1:871709221126:web:b5fcd36b1b1876b7a2be87",
-  measurementId: "G-85XBB4KVXR"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
- 
-export default function App(){
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+/*export default function App(){
   return(
      <WelcomeScreen/>
   );
 }
+*/
+
+
+const Stack = createStackNavigator();
+
+function MyStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Signup"
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: '#3740FE',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>   
+      <Stack.Screen 
+        name="Signup" 
+        component={Signup} 
+        options={{ title: 'Signup' }}
+      />       
+      <Stack.Screen 
+        name="Login" 
+        component={Login} 
+        options={
+          {title: 'Login'},
+          {headerLeft: null} 
+        }
+      />
+      <Stack.Screen 
+       name="Dashboard" 
+       component={Dashboard} 
+       options={
+         { title: 'Dashboard' },
+         {headerLeft: null} 
+       }
+      />
+    </Stack.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
+
