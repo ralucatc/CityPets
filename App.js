@@ -7,14 +7,14 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-/*export default function App(){
+export default function App(){
   return(
      <WelcomeScreen/>
   );
 }
-*/
 
-const Stack = createStackNavigator();
+
+/*const Stack = createStackNavigator();
 
 function MyStack() {
   return (
@@ -61,5 +61,5 @@ export default function App() {
       <MyStack />
     </NavigationContainer>
   );
-}
+}*/
 
