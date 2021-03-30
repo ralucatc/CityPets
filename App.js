@@ -1,37 +1,73 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Login from './screens/login';
+import Signup from './screens/signup';
+import Dashboard from './screens/dashboard';
+import WelcomeScreen from './screens/WelcomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import * as firebase from "firebase"
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyBVwrcl0YFwbSzW8CIcW1_amI6vtzu6Rus",
-  authDomain: "pets-friendly-cities.firebaseapp.com",
-  databaseURL: "https://pets-friendly-cities-default-rtdb.firebaseio.com",
-  projectId: "pets-friendly-cities",
-  storageBucket: "pets-friendly-cities.appspot.com",
-  messagingSenderId: "871709221126",
-  appId: "1:871709221126:web:b5fcd36b1b1876b7a2be87",
-  measurementId: "G-85XBB4KVXR"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+/*export default function App(){
+  return(
+     <WelcomeScreen/>
+  );
+}
+*/
 
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function MyStack() {
   return (
-    <View style={styles.container}>
-      <Text>This is going to be the first page of our app.</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator
+      initialRouteName="Welcome Screen"
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: "#57419d",
+          height : 80,
+        },
+        
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>   
+    <Stack.Screen 
+        name="Welcome Page" 
+        component={WelcomeScreen} 
+       
+      />  
+      <Stack.Screen 
+        name="Signup" 
+        component={Signup} 
+        options={{ title: 'Sign up' }}
+      />       
+      <Stack.Screen 
+        name="Login" 
+        component={Login} 
+        options={
+          {title: 'Login'}
+         // {headerLeft: null} 
+        }
+      />
+      <Stack.Screen 
+       name="Dashboard" 
+       component={Dashboard} 
+       options={
+         { title: 'Dashboard' },
+         {headerLeft: null} 
+       }
+      />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FF99CC',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
+
