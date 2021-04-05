@@ -6,16 +6,15 @@ import Dashboard from './screens/dashboard';
 import WelcomeScreen from './screens/WelcomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import AddingPet from './screens/AddingPet';
 
-/*export default function App(){
+export default function App(){
   return(
-     <WelcomeScreen/>
+     <AddingPet/>
   );
 }
-*/
 
-
-const Stack = createStackNavigator();
+/*const Stack = createStackNavigator();
 
 function MyStack() {
   return (
@@ -71,3 +70,4 @@ export default function App() {
   );
 }
 
+*/
