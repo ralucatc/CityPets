@@ -26,6 +26,12 @@ const categories = [
     { label: "Others", value: 4},
 ];
 
+const fields = [
+    { label: "Adopt", value: 1},
+    { label: "Lost", value: 2},
+    { label: "Shelter", value: 3},
+];
+
  export default function AddingPet(){
     return (
         <View style={styles.container}>
@@ -37,6 +43,7 @@ const categories = [
                 name: "",
                 age: "",
                 description: "",
+                fields: null,
                 category: null,
                 images: []
             }}
@@ -51,10 +58,15 @@ const categories = [
             maxLength={8}
             name="age"
             placeholder="Age"/>
-          <Picker
+            <Picker
             items={categories}
             name="category"
             placeholder="Category"
+            />
+          <Picker
+            items={fields}
+            name="fields"
+            placeholder="Fields"
             />
             <Field
             maxLength={255}
