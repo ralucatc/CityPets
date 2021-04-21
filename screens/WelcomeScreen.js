@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View } from 'react-native';
 import AppButton from '../components/AppButton';
 import colors from '../config/colors';
+import { DrawerActions } from '@react-navigation/native';
 
 function WelcomeScreen(props) {
     return (

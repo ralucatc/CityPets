@@ -23,30 +23,6 @@ import {
   );
 } */
 
-function Feed({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed Screen</Text>
-      <Button
-        title="Open drawer"
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-      />
-      <Button
-        title="Toggle drawer"
-        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-      />
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications Screen</Text>
-    </View>
-  );
-}
-
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -65,29 +41,28 @@ function CustomDrawerContent(props) {
 
 const Drawer = createDrawerNavigator();
 
-function MyDrawer() {
+/*function  NavigationDrawerStructure() {
   return (
     <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="Welcome!" component={WelcomeScreen} />
       <Drawer.Screen name="Form" component={AddingPet} />
-   
+  
+    </Drawer.Navigator>
+  );
+}*/
+
+function  NavigationDrawerStructure() {
+  return (
+    <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen name="Welcome!" component={ScreensStack} />
+      <Drawer.Screen name="Form" component={AddingPet} />
+  
     </Drawer.Navigator>
   );
 }
+const Stack = createStackNavigator();
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MyDrawer />
-    </NavigationContainer>
-  );
-}
-
-
-
-/*const Stack = createStackNavigator();
-
-function MyStack() {
+function ScreensStack() {
   return (
     <Stack.Navigator
       initialRouteName="Welcome Screen"
@@ -132,13 +107,19 @@ function MyStack() {
     </Stack.Navigator>
   );
 }
-
+/*
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack />
+      <ScreensStack />
     </NavigationContainer>
   );
 }
-
 */
+export default function App() {
+  return (
+    <NavigationContainer>
+      <NavigationDrawerStructure/>
+    </NavigationContainer>
+  );
+}
