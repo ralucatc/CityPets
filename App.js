@@ -40,16 +40,7 @@ function CustomDrawerContent(props) {
 }
 
 const Drawer = createDrawerNavigator();
-
-/*function  NavigationDrawerStructure() {
-  return (
-    <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="Welcome!" component={WelcomeScreen} />
-      <Drawer.Screen name="Form" component={AddingPet} />
-  
-    </Drawer.Navigator>
-  );
-}*/
+const Stack = createStackNavigator();
 
 function  NavigationDrawerStructure() {
   return (
@@ -60,7 +51,6 @@ function  NavigationDrawerStructure() {
     </Drawer.Navigator>
   );
 }
-const Stack = createStackNavigator();
 
 function ScreensStack() {
   return (
@@ -107,15 +97,7 @@ function ScreensStack() {
     </Stack.Navigator>
   );
 }
-/*
-export default function App() {
-  return (
-    <NavigationContainer>
-      <ScreensStack />
-    </NavigationContainer>
-  );
-}
-*/
+
 export default function App() {
   return (
     <NavigationContainer>

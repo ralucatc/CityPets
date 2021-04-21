@@ -12,7 +12,6 @@ function WelcomeScreen(props) {
            <View style={styles.buttonsContainer}>
            <AppButton title="Login"  onPress = {() => props.navigation.navigate('Login')}
            />
-           
            <AppButton title="Register" onPress = {() => props.navigation.navigate('Signup')} color = "secondary" 
            />
            </View>
