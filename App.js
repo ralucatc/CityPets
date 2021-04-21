@@ -7,7 +7,7 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AddingPet from './screens/AddingPet';
-
+import { Ionicons } from '@expo/vector-icons'
 import { DrawerActions } from '@react-navigation/native';
 import {
   createDrawerNavigator,
@@ -45,9 +45,40 @@ const Stack = createStackNavigator();
 function  NavigationDrawerStructure() {
   return (
     <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="Welcome!" component={ScreensStack} />
-      <Drawer.Screen name="Form" component={AddingPet} />
-  
+      <Drawer.Screen name="Home!" component={ScreensStack} 
+          options={{
+            drawerIcon: ({focused, size}) => (
+              <Ionicons
+                name="md-home"
+                size={size}
+                color={focused ? '#6600cc' : '#ccc'}
+              />
+            ),
+          }}
+      />
+      <Drawer.Screen name="Adopting" component={AddingPet} 
+        options={{
+          drawerIcon: ({focused, size}) => (
+            <Ionicons
+              name="md-heart"
+              size={size}
+              color={focused ? '#6600cc' : '#ccc'}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen name="Dashboard" component={Dashboard} 
+       options={{
+        drawerIcon: ({focused, size}) => (
+          <Ionicons
+            name="md-paw"
+            size={size}
+            color={focused ? '#6600cc' : '#ccc'}
+          />
+        ),
+      }}
+      />
+    
     </Drawer.Navigator>
   );
 }
@@ -93,7 +124,7 @@ function ScreensStack() {
          { title: 'Dashboard' },
          {headerLeft: null} 
        }
-      />
+      /> 
     </Stack.Navigator>
   );
 }
