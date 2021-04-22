@@ -15,14 +15,16 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import HomeScreen from './screens/HomeScreen';
+import FeedScreen from './screens/FeedScreen';
 
-/*export default function App(){
+export default function App(){
   return(
-     <AddingPet/>
+     <FeedScreen/>
 
   );
-} */
-
+} 
+/*
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -99,32 +101,22 @@ function ScreensStack() {
           fontWeight: 'bold',
         },
       }}>   
-    <Stack.Screen 
-        name="Welcome Page" 
-        component={WelcomeScreen} 
-       
-      />  
-      <Stack.Screen 
-        name="Signup" 
-        component={Signup} 
+    <Stack.Screen name="Welcome Page" component={WelcomeScreen}  />  
+    <Stack.Screen  name="Signup" component={Signup} 
         options={{ title: 'Sign up' }}
-      />       
-      <Stack.Screen 
-        name="Login" 
-        component={Login} 
+    />       
+    <Stack.Screen name="Login"  component={Login} 
         options={
           {title: 'Login'}
          // {headerLeft: null} 
-        }
-      />
-      <Stack.Screen 
-       name="Dashboard" 
-       component={Dashboard} 
+         }
+    />
+    <Stack.Screen name="Dashboard"  component={Dashboard} 
        options={
          { title: 'Dashboard' },
          {headerLeft: null} 
        }
-      /> 
+    /> 
     </Stack.Navigator>
   );
 }
@@ -135,4 +127,4 @@ export default function App() {
       <NavigationDrawerStructure/>
     </NavigationContainer>
   );
-}
+} */
