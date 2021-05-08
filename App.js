@@ -128,6 +128,51 @@ function AddingPetScreenStack({navigation}) {
   );
 }
 
+const WelcomeStack = createStackNavigator();
+
+function WelcomeScreenStack({navigation}) {
+  return (
+    <WelcomeStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: "#57419d",
+          height : 90,
+        },
+        
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>   
+    <WelcomeStack.Screen name="Welcome Page" component={WelcomeScreen} options={{
+      title:'Welcome!',
+      headerRight:() => (
+         <Icon.Button
+                 name="md-menu"
+                 size={30}
+                 backgroundColor= '#57419d' 
+                // height={40}
+                 onPress={() => navigation.openDrawer()}
+               />
+      )
+    }}
+    />
+    <Stack.Screen  name="Signup" component={Signup} 
+        options={{ title: 'Sign up' }}
+    />       
+    <Stack.Screen name="Login"  component={Login} 
+        options={
+          {title: 'Login'}
+         // {headerLeft: null} 
+         }
+    />
+
+    </WelcomeStack.Navigator>
+  );
+}
+
+
 // function CustomDrawerContent(props) {
 //   return (
 //     <DrawerContentScrollView {...props}>
@@ -149,8 +194,21 @@ const Drawer = createDrawerNavigator();
 function  NavigationDrawerStructure() {
   return (
    // <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-    <Drawer.Navigator initialRouteName="Home"> 
-     <Drawer.Screen name="Home!" component={HomeScreenStack} 
+    <Drawer.Navigator initialRouteName="Welcome"> 
+     
+     <Drawer.Screen name="Welcome" component={WelcomeScreenStack} 
+          options={{
+            drawerIcon: ({focused, size}) => (
+              <Ionicons
+                name="md-log-in"
+                size={size}
+                color={focused ? '#6600cc' : '#ccc'}
+              />
+            ),
+          }}
+      /> 
+     
+     <Drawer.Screen name="Home" component={HomeScreenStack} 
           options={{
             drawerIcon: ({focused, size}) => (
               <Ionicons
@@ -162,7 +220,7 @@ function  NavigationDrawerStructure() {
           }}
       /> 
 
-      <Drawer.Screen name="Adopting" component={AddingPetScreenStack} 
+      <Drawer.Screen name="Adopt!" component={AddingPetScreenStack} 
         options={{
           drawerIcon: ({focused, size}) => (
             <Ionicons
