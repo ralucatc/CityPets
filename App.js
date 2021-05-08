@@ -87,18 +87,47 @@ function HomeScreenStack({navigation}) {
                 // height={40}
                  onPress={() => navigation.openDrawer()}
                />
-        // <Button 
-        //   onPress={() => navigation.openDrawer()}
-        //         title="Info"
-        //         color="#00cc00"
-        // />
-
       )
     }}
     />      
     </HomeStack.Navigator>
   );
 }
+
+const AddingPetStack = createStackNavigator();
+
+function AddingPetScreenStack({navigation}) {
+  return (
+    <AddingPetStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: "#57419d",
+          height : 90,
+        },
+        
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>   
+    <AddingPetStack.Screen name="Home Page" component={AddingPet} options={{
+      title:'Addoption!',
+      headerRight:() => (
+         <Icon.Button
+                 name="md-menu"
+                 size={30}
+                 backgroundColor= '#57419d' 
+                // height={40}
+                 onPress={() => navigation.openDrawer()}
+               />
+      )
+    }}
+    />      
+    </AddingPetStack.Navigator>
+  );
+}
+
 // function CustomDrawerContent(props) {
 //   return (
 //     <DrawerContentScrollView {...props}>
@@ -133,7 +162,7 @@ function  NavigationDrawerStructure() {
           }}
       /> 
 
-      <Drawer.Screen name="Adopting" component={AddingPet} 
+      <Drawer.Screen name="Adopting" component={AddingPetScreenStack} 
         options={{
           drawerIcon: ({focused, size}) => (
             <Ionicons
