@@ -8,7 +8,7 @@ import { StyleSheet, Image, ScrollView, View, Text } from 'react-native'
         <View style={styles.container}>
             <ScrollView style={styles.scrollView}>
                 <Image style={styles.logo} source={require('../assets/form.png')} />
-                <Text style = {styles.textStyle}> Hello, @user! 
+                <Text style = {styles.textStyle}> Hello! 
                 </Text>
                 
             </ScrollView>
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     textStyle: {
         fontSize: 15,
         marginLeft: 150,
+        paddingLeft: 30,
       },
     scrollView: {
         marginHorizontal: 5,
