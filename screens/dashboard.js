@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 15,
     marginBottom: 20,
-    marginLeft: 130
+    marginLeft: 100
   }, 
   logo: {
     width: 300,
