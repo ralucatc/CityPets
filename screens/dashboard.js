@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, ScrollView, } from 'react-native';
 import firebase from '../database/firebase';
 
-export default class Dashboard extends Component {
-  constructor() {
+export default class Dashboard extends Component { 
+  
+constructor() {
     super();
     this.state = { 
       uid: ''
@@ -24,16 +25,23 @@ export default class Dashboard extends Component {
     }    
     return (
       <View style={styles.container}>
-        <Text style = {styles.textStyle}>
-          Hello, {this.state.displayName}
-        </Text>
+        <ScrollView style={styles.scrollView}>
+            <Image style={styles.logo} source={require('../assets/form.png')} />
 
-        <Button
-          color="#3740FE"
-          title="Logout"
-          onPress={() => this.signOut()}
-        />
+            <Text style = {styles.textStyle}>
+              Hello, {this.state.displayName}
+            </Text>
+
+            <Button style={styles.logout}  
+              title="Logout"
+              onPress={() => this.signOut()}
+           />       
+        </ScrollView>
+        
+        
       </View>
+
+      
     );
   }
 }
@@ -49,6 +57,20 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 15,
-    marginBottom: 20
-  }
+    marginBottom: 20,
+    marginLeft: 100
+  }, 
+  logo: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  logout: {
+    color: "#3740FE" 
+  },
+  scrollView: {
+      marginVertical: 5,
+    }, 
 });
