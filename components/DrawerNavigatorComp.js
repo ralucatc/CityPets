@@ -129,7 +129,7 @@ const Stack = createStackNavigator();
 
 function MyStack({navigation}) {
   return (
-    <Stack.Navigator initialRouteName="Welcome-Screen" 
+    <Stack.Navigator initialRouteName="City Pets" 
     screenOptions={{
               headerTitleAlign: 'center',
               headerStyle: {
@@ -184,8 +184,8 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigatorComp() {
   return (
     <NavigationContainer>
-     <Drawer.Navigator initialRouteName="Welcome-Screen" >
-      <Drawer.Screen name="Welcome-Screen" component={MyStack}/>
+     <Drawer.Navigator initialRouteName="City Pets" >
+      <Drawer.Screen name="City Pets" component={MyStack}/>
       
       <Drawer.Screen name="About" component={HomeScreenStack}
           options={{
