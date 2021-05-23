@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import * as Yup from 'yup'
-import { StyleSheet, Image, ScrollView, View } from 'react-native'
+import firebase from '../database/firebase'
+import { StyleSheet, Image, ScrollView, View, Alert } from 'react-native'
 import {
 	FormField as Field,
 	Form,
@@ -32,6 +33,11 @@ const fields = [
     { label: "Shelter", value: 3},
 ];
 
+function submitClick() {
+    var firebaseRef = firebase.database().ref();
+    firebaseRed.child("Animal")
+}
+
  export default function AddingPet(){
     return (
         <View style={styles.container}>
@@ -47,7 +53,8 @@ const fields = [
                 category: null,
                 images: []
             }}
-            onSubmit={(Values) => console.log("yay")}
+
+            onSubmit={(Values) => Alert.alert("You pet is now added!")}
             validationSchema={validationSchema}>
 
             
