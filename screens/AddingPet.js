@@ -9,6 +9,7 @@ import {
 	FormPicker as Picker,
 	SubmitButton as Submit,
 } from '../components/forms'
+//import database from '@react-native-firebase/database'
 //import styles from '../config/styles'
 
 
@@ -33,10 +34,12 @@ const fields = [
     { label: "Shelter", value: 3},
 ];
 
-function submitClick() {
-    var firebaseRef = firebase.database().ref();
-    firebaseRed.child("Animal")
-}
+
+const submitForm = (values) => {
+       var firebaseRef = firebase.database().ref();
+       firebaseRef.push().set(values);
+       Alert.alert("Your pet was added!");
+   }
 
  export default function AddingPet(){
     return (
@@ -54,7 +57,7 @@ function submitClick() {
                 images: []
             }}
 
-            onSubmit={(Values) => Alert.alert("You pet is now added!")}
+            onSubmit={(Values) => submitForm(Values)}
             validationSchema={validationSchema}>
 
             
