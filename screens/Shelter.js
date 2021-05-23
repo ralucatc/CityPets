@@ -3,11 +3,11 @@ import * as Yup from 'yup'
 import { StyleSheet, Image, ScrollView, View, Text, FlatList, TouchableOpacity } from 'react-native'
 import HeaderCard from '../components/HeaderCard.js'
 import PetCard from '../components/PetCard.js'
-import PetsDetails from '../screens/PetsDetails.js'
+import PetsDetails from './PetsDetails.js'
 import OptionsCard from '../components/OptionsCard.js'
 import firebase from '../database/firebase';
 
- export default function FeedPet({navigation})
+ export default function Shelter({navigation})
  {
     const [details,setDetails] = useState([
        {  title: 'Golden Retriever', img:'1', age:'Age',  body:'Description' , key: '1'  },
@@ -62,8 +62,10 @@ import firebase from '../database/firebase';
                 <TouchableOpacity >
                    <PetCard>
                    <Image style={styles.logo2} source={images.imag[item.img]}/>            
-                   <Text >
-                        {item.title}
+                   <Text style={styles.titleText}> {item.title}
+                    </Text> 
+                    <Text style={styles.description}>
+                        Taking care of a pet is my favourite, it helps me to ....
                     </Text>
                    </PetCard>
                 </TouchableOpacity>
@@ -120,9 +122,19 @@ const styles=StyleSheet.create({
       }, 
    
     titleText:{
-      color: '#500cb0',
-      fontSize: 20,
+      color: '#43167a',
+      fontSize: 25,
       fontWeight: 'bold',
-     
+      paddingLeft:155,
+      marginVertical:-150,
+    },
+    description: {
+        color: '#7f4bc9',
+        fontSize: 14,
+        fontWeight: 'bold',
+        height:100,
+        marginVertical:180,
+        paddingLeft:160,
     }
+
 })

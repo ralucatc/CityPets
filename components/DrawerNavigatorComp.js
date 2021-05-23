@@ -6,7 +6,7 @@ import Dashboard from '../screens/dashboard'
 import WelcomeScreen from '../screens/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen';
 import AddingPet from '../screens/AddingPet';
-import FeedScreen from '../screens/FeedScreen';
+import Adoption from '../screens/Adoption';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -22,6 +22,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+
 
 const HomeStack = createStackNavigator();
 
@@ -74,8 +75,8 @@ function FeedScreenStack({navigation}) {
           fontWeight: 'bold',
         },
       }}>
-    <FeedStack.Screen name="FeedPage" component={FeedScreen} options={{
-      title:'Community!',
+    <FeedStack.Screen name="Adoption" component={Adoption} options={{
+      title:'Adoption',
       headerRight:() => (
          <Icon.Button
                  name="md-menu"
@@ -109,7 +110,7 @@ function AddingPetScreenStack({navigation}) {
         },
       }}>
     <AddingPetStack.Screen name="AddingPage" component={AddingPet} options={{
-      title:'Add a pet!',
+      title:'Add a pet',
       headerRight:() => (
          <Icon.Button
                  name="md-menu"
@@ -185,7 +186,7 @@ export default function DrawerNavigatorComp() {
   return (
     <NavigationContainer>
      <Drawer.Navigator initialRouteName="Welcome-Screen" >
-      <Drawer.Screen name="Welcome-Screen" component={MyStack}/>
+      <Drawer.Screen name="City Pets" component={MyStack}/>
       
       <Drawer.Screen name="About" component={HomeScreenStack}
           options={{
@@ -199,7 +200,19 @@ export default function DrawerNavigatorComp() {
           }}
       />
 
-      <Drawer.Screen name="Feed" component={FeedScreenStack}
+      <Drawer.Screen name="Add a pet" component={AddingPetScreenStack}
+        options={{
+          drawerIcon: ({focused, size}) => (
+            <Ionicons
+              name="md-heart"
+              size={size}
+              color={focused ? '#6600cc' : '#ccc'}
+            />
+          ),
+        }}
+      />
+
+  <Drawer.Screen name="Adoption" component={FeedScreenStack}
         options={{
           drawerIcon: ({focused, size}) => (
             <Ionicons
@@ -211,17 +224,6 @@ export default function DrawerNavigatorComp() {
         }}
       />
 
-      <Drawer.Screen name="Add a pet!" component={AddingPetScreenStack}
-        options={{
-          drawerIcon: ({focused, size}) => (
-            <Ionicons
-              name="md-heart"
-              size={size}
-              color={focused ? '#6600cc' : '#ccc'}
-            />
-          ),
-        }}
-      />
 
      </Drawer.Navigator>  
     </NavigationContainer>
