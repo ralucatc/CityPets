@@ -1,12 +1,12 @@
-
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Login from './screens/login';
-import Signup from './screens/signup';
-import Dashboard from './screens/dashboard'
-import WelcomeScreen from './screens/WelcomeScreen';
-import HomeScreen from './screens/HomeScreen';
-import AddingPet from './screens/AddingPet';
-import FeedScreen from './screens/FeedScreen';
+import Login from '../screens/login';
+import Signup from '../screens/signup';
+import Dashboard from '../screens/dashboard'
+import WelcomeScreen from '../screens/WelcomeScreen';
+import HomeScreen from '../screens/HomeScreen';
+import AddingPet from '../screens/AddingPet';
+import FeedScreen from '../screens/FeedScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -22,16 +22,8 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import DrawerNavigatorComp from './components/DrawerNavigatorComp';
 
-
-export default function App(){
-  return(
-     <DrawerNavigatorComp/>
-  );
-}
-
-/*const HomeStack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
 function HomeScreenStack({navigation}) {
   return (
@@ -189,7 +181,7 @@ function MyStack({navigation}) {
 
 const Drawer = createDrawerNavigator();
 
-export default function App() {
+export default function DrawerNavigatorComp() {
   return (
     <NavigationContainer>
      <Drawer.Navigator initialRouteName="Welcome-Screen" >
@@ -235,4 +227,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-*/
