@@ -36,10 +36,13 @@ const fields = [
 
 
 const submitForm = (values) => {
-       var firebaseRef = firebase.database().ref();
-       firebaseRef.push().set(values);
+       
        Alert.alert("Your pet was added!");
+       const db = firebase.firestore();
+       db.collection("pets").doc().set(values);
    }
+
+   
 
  export default function AddingPet(){
     return (
