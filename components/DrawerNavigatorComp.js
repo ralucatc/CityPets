@@ -7,6 +7,8 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen';
 import AddingPet from '../screens/AddingPet';
 import Adoption from '../screens/Adoption';
+import LostFound from '../screens/LostFound';
+import Shelter from '../screens/Shelter';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,6 +16,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
 import iconSet from '@expo/vector-icons/build/Fontisto';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 import { DrawerActions } from '@react-navigation/native';
 import {
@@ -22,6 +25,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+
 
 
 const HomeStack = createStackNavigator();
@@ -89,6 +93,74 @@ function FeedScreenStack({navigation}) {
     }}
     />
     </FeedStack.Navigator>
+  );
+}
+
+const LFStack = createStackNavigator();
+
+function LFScreenStack({navigation}) {
+  return (
+    <LFStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: "#57419d",
+          height : 90,
+        },
+
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
+    <LFStack.Screen name="Lost and Found" component={LostFound} options={{
+      title:'Lost&Found',
+      headerRight:() => (
+         <Icon.Button
+                 name="md-menu"
+                 size={30}
+                 backgroundColor= '#57419d'
+                // height={40}
+                 onPress={() => navigation.openDrawer()}
+               />
+      )
+    }}
+    />
+    </LFStack.Navigator>
+  );
+}
+
+const ShelterStack = createStackNavigator();
+
+function ShelterScreenStack({navigation}) {
+  return (
+    <ShelterStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: "#57419d",
+          height : 90,
+        },
+
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
+    <ShelterStack.Screen name="Shelter" component={Shelter} options={{
+      title:'Shelter',
+      headerRight:() => (
+         <Icon.Button
+                 name="md-menu"
+                 size={30}
+                 backgroundColor= '#57419d'
+                // height={40}
+                 onPress={() => navigation.openDrawer()}
+               />
+      )
+    }}
+    />
+    </ShelterStack.Navigator>
   );
 }
 
@@ -215,8 +287,8 @@ export default function DrawerNavigatorComp() {
   <Drawer.Screen name="Adoption" component={FeedScreenStack}
         options={{
           drawerIcon: ({focused, size}) => (
-            <Ionicons
-              name="md-star"
+            <MaterialIcons
+              name="pets"
               size={size}
               color={focused ? '#6600cc' : '#ccc'}
             />
@@ -224,6 +296,29 @@ export default function DrawerNavigatorComp() {
         }}
       />
 
+    <Drawer.Screen name="Lost and Found" component={LFScreenStack}
+        options={{
+          drawerIcon: ({focused, size}) => (
+            <Ionicons
+              name="md-search"
+              size={size}
+              color={focused ? '#6600cc' : '#ccc'}
+            />
+          ),
+        }}
+      />
+
+    <Drawer.Screen name="Shelter" component={ShelterScreenStack}
+        options={{
+          drawerIcon: ({focused, size}) => (
+            <MaterialCommunityIcons
+              name="home-heart"
+              size={size}
+              color={focused ? '#6600cc' : '#ccc'}
+            />
+          ),
+        }}
+      />
 
      </Drawer.Navigator>  
     </NavigationContainer>
