@@ -5,12 +5,15 @@ import HeaderCard from '../components/HeaderCard.js'
 import PetCard from '../components/PetCard.js'
 import PetsDetails from '../screens/PetsDetails.js'
 import OptionsCard from '../components/OptionsCard.js'
+import firebase from '../database/firebase';
 
- export default function FeedPet({navigation}){
+ export default function FeedPet({navigation})
+ {
     const [details,setDetails] = useState([
-       {  title: 'Pet1', rating: 5, body: 'lorem ipsum', key: '1'  },
-       {  title: 'Pet2', rating: 5, body: 'lorem ipsum', key: '2'  },
-       {  title: 'Pet3', rating: 5, body: 'lorem ipsum', key: '3'  }
+       {  title: 'Golden Retriever', img:'1', age:'Age',  body:'Description' , key: '1'  },
+       {  title: 'Labrador', img:'2' , age:'Age',  body:'Description' , key: '2'  },
+       {  title: 'Dog\'s Breed', img:'3', age:'Age',  body:'Description' , key: '3'  },
+
     ]);
 
     const [options,setOptions]  = useState([
@@ -20,15 +23,23 @@ import OptionsCard from '../components/OptionsCard.js'
         {  title: 'Others',  key: '4'  }
      ]);
 
+     const images ={
+         imag: {
+            '1': require('../assets/golden.png'),
+            '2': require('../assets/labrador.png'),
+            '3': require('../assets/dog.png'),
+         }
+     };
+    
     return (
-        <View syle={styles.container}>
+        <View >
         <HeaderCard>
-            <Image style={styles.logo} source={require('../assets/profile.jpg')} />
+            <Image style={styles.logo} source={require('../assets/profil.png')} />
             <Text style={styles.userName}>
                 @User!
             </Text>
-            <Text >
-                @ULocation!
+            <Text style={styles.userLocation}>
+                @Location!
             </Text>
             <FlatList
                 horizontal={true}
@@ -50,7 +61,8 @@ import OptionsCard from '../components/OptionsCard.js'
             renderItem={({item}) => (
                 <TouchableOpacity >
                    <PetCard>
-                   <Text styles={styles.titleText}>
+                   <Image style={styles.logo2} source={images.imag[item.img]}/>            
+                   <Text >
                         {item.title}
                     </Text>
                    </PetCard>
@@ -67,11 +79,26 @@ const styles=StyleSheet.create({
         height: 100,
         resizeMode: 'contain',
         justifyContent: 'flex-end',
-        borderRadius:10,
+        shadowOffset: { width: 4, height: 4 },
+        shadowColor: '#333',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderRadius: 2,
+      },
+      logo2:{
+        width: 150,
+        height: 150,
+        resizeMode: 'contain',
+        justifyContent: 'flex-end',
+        shadowOffset: { width: 4, height: 4 },
+        shadowColor: '#333',
+        shadowOpacity: 0.5,
+        shadowRadius: 1,
+        borderRadius: 2,
       },
     optionsText: {
         color: '#fff',
-        fontSize: 30,
+        fontSize: 70,
         fontWeight: 'bold'
   
     },
@@ -82,7 +109,20 @@ const styles=StyleSheet.create({
       fontWeight: 'bold',
       marginHorizontal: 120,
       marginVertical: -80,
-      
-
+    
+    }, 
+    userLocation:{
+        color: '#7f4bc9',
+        fontSize: 20,
+        fontWeight: 'bold',
+        paddingTop:90,
+        paddingLeft:120,
+      }, 
+   
+    titleText:{
+      color: '#500cb0',
+      fontSize: 20,
+      fontWeight: 'bold',
+     
     }
 })

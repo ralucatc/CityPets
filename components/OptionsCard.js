@@ -24,7 +24,7 @@ const styles=StyleSheet.create({
       shadowOpacity: 0.5,
       shadowRadius: 4,
       marginHorizontal: 8,
-      marginVertical: 135,
+      marginVertical: 50,
       height: 38,
       width: 77,
     }, 
