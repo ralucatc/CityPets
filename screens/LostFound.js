@@ -36,10 +36,10 @@ import firebase from '../database/firebase';
         <HeaderCard>
             <Image style={styles.logo} source={require('../assets/profil.png')} />
             <Text style={styles.userName}>
-                @User!
+                @User
             </Text>
             <Text style={styles.userLocation}>
-                @Location!
+                @Location
             </Text>
             <FlatList
                 horizontal={true}
@@ -107,14 +107,13 @@ const styles=StyleSheet.create({
     userName:{
       color: '#500cb0',
       fontSize: 20,
-      textTransform: 'uppercase',
       fontWeight: 'bold',
       marginHorizontal: 120,
       marginVertical: -80,
     
     }, 
     userLocation:{
-        color: '#7f4bc9',
+        color: '#500cb0',
         fontSize: 20,
         fontWeight: 'bold',
         paddingTop:90,

@@ -114,7 +114,7 @@ function LFScreenStack({navigation}) {
         },
       }}>
     <LFStack.Screen name="Lost and Found" component={LostFound} options={{
-      title:'Lost&Found',
+      title:'Lost Pet',
       headerRight:() => (
          <Icon.Button
                  name="md-menu"
@@ -148,7 +148,7 @@ function ShelterScreenStack({navigation}) {
         },
       }}>
     <ShelterStack.Screen name="Shelter" component={Shelter} options={{
-      title:'Shelter',
+      title:'Find Shelter',
       headerRight:() => (
          <Icon.Button
                  name="md-menu"
@@ -296,7 +296,7 @@ export default function DrawerNavigatorComp() {
         }}
       />
 
-    <Drawer.Screen name="Lost and Found" component={LFScreenStack}
+    <Drawer.Screen name="Lost Pet" component={LFScreenStack}
         options={{
           drawerIcon: ({focused, size}) => (
             <Ionicons
@@ -308,7 +308,7 @@ export default function DrawerNavigatorComp() {
         }}
       />
 
-    <Drawer.Screen name="Shelter" component={ShelterScreenStack}
+    <Drawer.Screen name="Find Shelter" component={ShelterScreenStack}
         options={{
           drawerIcon: ({focused, size}) => (
             <MaterialCommunityIcons
